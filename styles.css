@@ -210,6 +210,8 @@ table {
 
 .trans{
 	transition: .5s ease-in-out;
+}.fade{
+	animation: .5s fade;
 }
 
 .top{
@@ -221,11 +223,117 @@ table {
 	z-index: 56;
 }
 
+.btn{
+	transition: .5s ease-in-out;
+}
+.btn:hover{
+	background-color: #ff9682;
+}
+
+.fadeInDown{
+	animation: .5s fadeInDown;
+}.fade-1{
+	animation: 1s fade;
+}.fadeInLeft{
+    animation: .5s fadeInLeft;
+}img:hover{
+    transition: .5s ease-in-out;
+    transform: scale(1.5);
+}
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+@keyframe fadeInLeft{
+   0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframe fade{
 	0%{
 		opacity: 0;
 	}
 	100%{
 		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframe fadeInDown{
+   0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.over-y{
+	overflow-y: scroll;
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 800px){
+
+	main{
+		flex-direction: column;
+		overflow: visible!important;
+		overflow-x: hidden!important;
+	}main div{
+		width: 100%!important;
+	}.cont1{
+		padding: revert !important;	
+	}
+
+	.img-cont{
+		margin-top: 5%;
+	}
+
+	p,h4,h1{
+		text-align: center!important;
+	}
+
+	.modal{
+		height: 50%!important;
+		padding: 10px!important;
+	}.modal img{
+		width: 100%!important
+	}
+
+	.cont{
+		margin-top: 10%!important;
+		padding: revert!important;
+		justify-content: center;
+	}
+
+	#ins{
+		margin-bottom: 10%;
 	}
 }

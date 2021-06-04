@@ -2,7 +2,7 @@ const info = [
 	{
 		src:"https://images.unsplash.com/photo-1495991602988-b15030d76a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFlc3RoZXRpYyUyMGZsb3dlcnxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
 		alt:"Flowers",
-		mes:"Wow flowers Happy birthday"
+		mes:"Wow flower Happy birthday"
 	},
 	{
 		src:"https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80",
@@ -42,7 +42,7 @@ const info = [
 	{
 		src:"https://images.unsplash.com/photo-1542383578-000e248cde3b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHRyYXZlbGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
 		alt:"Travel",
-		mes:"Ah basta travel kay wa lang trip lang Happy birthday denise HAHAHAH"
+		mes:"Ambot bitaw unsa ni basta Happy birthday denise HAHAHAH"
 	}
 ];
 
@@ -52,10 +52,10 @@ info.forEach((elem)=>{
 	let newNode = document.createElement('img');
 	let nodeCont = document.createElement('div');
 
-	nodeCont.className = "ml-2 w-auto h-cus mw head br-15";
+	nodeCont.className = "ml-2 w-auto h-cus mw head br-15 over-hide fadeInLeft img-cont";
 	newNode.src = elem.src;
 	newNode.alt = elem.alt;
-	newNode.className = "fit hide";
+	newNode.className = "fit hide cur";
 	nodeCont.appendChild(newNode);
 	cont.appendChild(nodeCont);
 })
@@ -65,6 +65,7 @@ let cur = 0;
 const display = (row)=>{
 	while(cur<row*3){
 		cont.children[cur].children[0].classList.remove('hide');
+		cont.children[cur].children[0].style.animation = 'fade-1 ${.5+(cur/10)}s ease-in-out';
 		cur++;
 	}
 	if(cur === 9){
